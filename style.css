@@ -1,19 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Sevillana&family=Share+Tech+Mono&display=swap");
+/*Importando uma fonte do google fontes*/
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/*Configurações básicas, para eu conseguir trabalhar melhor*/
 body {
   height: 100vh;
   background: url(imagem/dia.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  /*Adaptando a imagem a qualquer tipo de dispositivo, e deixando com 100% da tela,*/
   display: flex;
   justify-content: center;
   align-items: center;
+  /*Essas configurações acima é para deixar a caixa(div), dos textos, no centro. Em qualquer dispositivo*/
 }
+
 
 .container {
   border-radius: 10px;
@@ -22,14 +27,15 @@ body {
   padding: 30px;
   color: white;
   background: transparent;
-  backdrop-filter: blur(0);
-  animation: animation 6s forwards;
+  backdrop-filter: blur(0); /*Deixando o fundo da div, borrado, efeito vidro*/
+  animation: animation 6s forwards; /*Animação que eu mesmo criei*/
 }
+
 
 .text {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.395);
   color: transparent;
-  animation: text 4s forwards;
+  animation: text 4s forwards; /*Animação que eu criei, pra aparecer o texto devagar*/
 }
 
 #frase {
@@ -38,14 +44,15 @@ body {
 #cumprimento {
   font-family: "Sevillana", cursive;
 }
+/*Mudando as fontes, pra ficar bonito*/
 
 @keyframes text {
   100% {
-    color: white;
+    color: white; /*Criando animação do texto aqui*/
   }
 }
 
-@keyframes animation {
+@keyframes animation { /*Criando animação da caixa(div) ficando borrada*/
   0% {
     backdrop-filter: blur(1px);
   }

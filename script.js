@@ -1,7 +1,8 @@
-function aleatorio(items){
-    let indice = Math.floor(Math.random() * items.length)
-    return items[indice]
+function aleatorio(items) {
+  let indice = Math.floor(Math.random() * items.length);
+  return items[indice];
 }
+/*Criando uma função(tipo o def em python, tem a mesma finalidade) para pegar um item da lista de forma aleatória*/
 
 let frasesDia = [
   "É importante agradecer pelo hoje sem nunca desistir do amanhã!",
@@ -36,19 +37,23 @@ let frasesTarde = [
   "Lute com determinação, abrace a vida com paixão, perca com classe e vença com ousadia, porque o mundo pertence a quem se atreve e a vida é muito para ser insignificante.",
 ];
 
-var hora = new Date().getHours();
+/*Essa parte acima, é a criação das frases motivacionais, são 3 listas com 8 frases, eu deixei compacto pois fica muito grande*/
+
+var hora = new Date().getHours(); /*Pedindo a hora atual do computador(toda vez que for executado ele vai ver que horas são) */
 var cumprimento = document.getElementById("cumprimento");
 var frase = document.getElementById("frase");
+/*Criando variáveis pra conseguir mexer com o HTML através do javascript */
 
 if (hora > 5 && hora < 13) {
   cumprimento.innerHTML = "Bom dia!!!";
-  frase.innerHTML = aleatorio(frasesDia);
+  frase.innerHTML = aleatorio(frasesDia) /*Chamando a função pra pegar um item da lista aleatoriamente */;
 } else if (hora > 12 && hora < 18) {
   cumprimento.innerHTML = "Boa tarde!!!";
-  document.body.style.backgroundImage = "url('imagem/tarde.jpeg')";
-  frase.innerHTML = aleatorio(frasesTarde);
+  document.body.style.backgroundImage = "url('imagem/tarde.jpeg')"; /*mudando o fundo da página */
+  frase.innerHTML = aleatorio(frasesTarde) /*Chamando a função pra pegar um item da lista aleatoriamente */;
 } else {
   cumprimento.innerHTML = "Boa noite!!!";
-  document.body.style.backgroundImage = "url('imagem/noite.jpeg')";
-  frase.innerHTML = aleatorio(frasesNoite);
+  document.body.style.backgroundImage = "url('imagem/noite.jpeg')"; /*mudando o fundo da página */
+  frase.innerHTML = aleatorio(frasesNoite) /*Chamando a função pra pegar um item da lista aleatoriamente */;
 }
+/*Usando condicionais, verifico a hora atual, e faço a lógica pela hora de que horário do dia é, dependendo do horário, exibe uma imagem, e frase diferente*/
